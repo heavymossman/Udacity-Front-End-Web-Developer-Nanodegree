@@ -27,7 +27,7 @@ var bio = {
 	'biopic' : 'https://pbs.twimg.com/profile_images/491578108063936512/0ixtr84I_400x400.jpeg'
 };
 
-console.log(bio)
+console.log(bio);
 
 var education = {
 	'schools' : [
@@ -58,7 +58,7 @@ var education = {
 	]
 }
 
-console.log(education)
+console.log(education);
 
 var work = {
 	'jobs' : [
@@ -79,7 +79,7 @@ var work = {
 	]
 };
 
-console.log(work)
+console.log(work);
 
 var projects = {
 	'projects' : [
@@ -106,4 +106,4 @@ var projects = {
 	]
 };
 
-console.log(projects)
+console.log(projects);
