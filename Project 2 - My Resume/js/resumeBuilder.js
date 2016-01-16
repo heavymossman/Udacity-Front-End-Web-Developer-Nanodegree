@@ -59,3 +59,51 @@ var education = {
 }
 
 console.log(education)
+
+var work = {
+	'jobs' : [
+	{
+		'employer' : 'Disrupt and Refine',
+		'title' : 'Managing Director',
+		'location' : 'Google Campus - Old Street, London, UK',
+		'dates' : '2008 - 2016',
+		'description' : 'I was the daddy - so what??'
+	},
+	{
+		'employer' : 'Globes Services INC',
+		'title' : 'CEO',
+		'location' : 'Google Campus - Old Street, London, UK',
+		'dates' : '2012 - Present',
+		'description' : 'I was the daddy - so what??'
+	}
+	]
+};
+
+console.log(work)
+
+var projects = {
+	'projects' : [
+	{
+		'title' : 'Diligence',
+		'dates' : '2015 - 2016',
+		'description' : 'description will go here',
+		'images': [
+	       'http://placekitten.com/g/300/300',
+	       'http://placekitten.com/g/250/300',
+	       'http://placekitten.com/g/350/300'
+     ]
+	},
+	{
+		'title' : 'Disrupt and Refine',
+		'dates' : 'Managing Director',
+		'description' : 'I was the daddy - so what??',
+		'images': [
+	       'http://placekitten.com/g/300/300',
+	       'http://placekitten.com/g/250/300',
+	       'http://placekitten.com/g/350/300'
+     ]
+	}
+	]
+};
+
+console.log(projects)
