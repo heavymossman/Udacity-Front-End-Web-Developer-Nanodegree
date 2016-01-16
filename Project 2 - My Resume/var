@@ -1,0 +1,8 @@
+var awesomeThoughts = "I am Michael and I am AWESOME!"
+console.log(awesomeThoughts);
+
+var newAwesome = awesomeThoughts.replace("AWESOME", "FUN");
+
+console.log(awesomeThoughts);
+console.log(newAwesome);
+
