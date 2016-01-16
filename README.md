@@ -6,7 +6,7 @@ This repository contains project work for <a href="https://www.udacity.com/cours
 
 <h2>Projects:</h2>
 <ul>
-  <li>Project 1 - Mockup to Website</li>
+  <li>Project 1 - Mockup to Website - <a href="http://michaelosullivan.london/" target="_blank">Live Site</a></li>
   <li>Project 2 - Interactive Resume</li>
   <li>Project 3 - Classic Arcade Game Clone</li>
   <li>Project 4 - Website Optimization</li>
