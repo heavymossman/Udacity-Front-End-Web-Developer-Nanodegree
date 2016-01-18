@@ -23,7 +23,7 @@ var bio = {
 		'location' : 'London'
 	},
 	'welcomeMessage' : 'Hello Sexy Moss',
-	'skills' : ['Front End Web Developer Expert', 'HTML 5', 'CSS', 'Python'],
+	'skills' : ['JaveScript', 'HTML 5', 'CSS', 'Python'],
 	'biopic' : 'https://pbs.twimg.com/profile_images/491578108063936512/0ixtr84I_400x400.jpeg'
 };
 
@@ -107,3 +107,19 @@ var projects = {
 };
 
 console.log(projects);
+
+/* This will create the Skills at a glance section */ 
+
+if(bio.skills.length > 0) {
+
+	$("#header").append(HTMLskillsStart);
+
+	var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
+	$("#skills").append(formattedSkill);
+	formattedSkill = HTMLskills.replace("%data%", bio.skills[1]); 
+	$("#skills").append(formattedSkill);
+	formattedSkill = HTMLskills.replace("%data%", bio.skills[2]); 
+	$("#skills").append(formattedSkill);
+	formattedSkill = HTMLskills.replace("%data%", bio.skills[3]); 
+	$("#skills").append(formattedSkill);
+}
