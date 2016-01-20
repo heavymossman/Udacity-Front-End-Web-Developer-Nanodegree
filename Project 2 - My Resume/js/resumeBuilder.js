@@ -1,4 +1,5 @@
 
+/*
 var name = "Michael O'Sullivan";
 var formattedName = HTMLheaderName.replace("%data%", name);
 
@@ -8,7 +9,7 @@ var formattedRole = HTMLheaderRole.replace("%data%", role);
 
 
  $("#header").prepend(formattedRole); /* we use prepend to ensure content is delivered at the beginning of the DIV - append delivery it at the end I think */
- $("#header").prepend(formattedName);
+ // $("#header").prepend(formattedName);
 
 
 
@@ -108,6 +109,11 @@ var projects = {
 
 console.log(projects);
 
+// Going to try to append bio sections manually 
+
+
+
+
 /* This will create the Skills at a glance section */ 
 
 if(bio.skills.length > 0) {
@@ -123,3 +129,34 @@ if(bio.skills.length > 0) {
 	formattedSkill = HTMLskills.replace("%data%", bio.skills[3]); 
 	$("#skills").append(formattedSkill);
 }
+
+
+// This is the Work Experience section
+
+for (job in work.jobs) {
+	$("#workExperience").append(HTMLworkStart);
+
+	var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+	var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+	var formattedEmployerTitle = formattedEmployer + formattedTitle;
+
+// This section below ads in the Job title via jQuery at the END of the string. 
+
+	$(".work-entry:last").append(
+		formattedEmployerTitle
+		);
+}
+
+
+var formattedName = HTMLheaderName.replace("%data%", bio.name); 
+$("#header").prepend(formattedName);
+
+
+
+console.log(formattedName);
+
+
+
+
+
+
