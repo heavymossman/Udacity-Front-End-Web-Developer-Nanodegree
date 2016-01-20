@@ -111,6 +111,11 @@ console.log(projects);
 
 // Going to try to append bio sections manually 
 
+var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+$("#header").prepend(formattedRole);
+var formattedName = HTMLheaderName.replace("%data%", bio.name); 
+$("#header").prepend(formattedName);
+
 
 
 
@@ -148,12 +153,6 @@ for (job in work.jobs) {
 }
 
 
-var formattedName = HTMLheaderName.replace("%data%", bio.name); 
-$("#header").prepend(formattedName);
-
-
-
-console.log(formattedName);
 
 
 
