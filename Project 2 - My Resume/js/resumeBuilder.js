@@ -116,7 +116,12 @@ $("#header").prepend(formattedRole);
 var formattedName = HTMLheaderName.replace("%data%", bio.name); 
 $("#header").prepend(formattedName);
 
+// This section will append the bio pic and the bio contact details
 
+
+
+var formattedBiopic = HTMLbioPic.replace("%data%", bio.biopic);
+$("#header").append(formattedBiopic);
 
 
 /* This will create the Skills at a glance section */ 
