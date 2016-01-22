@@ -66,16 +66,16 @@ var work = {
 	{
 		'employer' : 'Disrupt and Refine',
 		'title' : 'Managing Director',
-		'location' : 'Google Campus - Old Street, London, UK',
+		'location' : 'Old Street, London, UK',
 		'dates' : '2008 - 2016',
-		'description' : 'I was the daddy - so what??'
+		'description' : 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.'
 	},
 	{
 		'employer' : 'Globes Services INC',
 		'title' : 'CEO',
-		'location' : 'Google Campus - Old Street, London, UK',
+		'location' : 'Old Street, London, UK',
 		'dates' : '2012 - Present',
-		'description' : 'I was the daddy - so what??'
+		'description' : 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.'
 	}
 	]
 };
@@ -116,9 +116,11 @@ $("#header").prepend(formattedRole);
 var formattedName = HTMLheaderName.replace("%data%", bio.name); 
 $("#header").prepend(formattedName);
 
-// This section will append the bio pic and the bio contact details
+// This section will append the bio pic and the welcome message
 
 
+var formattedWelcomemsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
+$("#header").append(formattedWelcomemsg);
 
 var formattedBiopic = HTMLbioPic.replace("%data%", bio.biopic);
 $("#header").append(formattedBiopic);
@@ -140,6 +142,7 @@ if(bio.skills.length > 0) {
 	$("#skills").append(formattedSkill);
 }
 
+function displayWork() {
 
 // This is the Work Experience section
 
@@ -150,15 +153,39 @@ for (job in work.jobs) {
 	var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
 	var formattedEmployerTitle = formattedEmployer + formattedTitle;
 
+	
+
 // This section below ads in the Job title via jQuery at the END of the string. 
 
 	$(".work-entry:last").append(
 		formattedEmployerTitle
 		);
+
+	var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+	$(".work-entry:last").append(formattedDates);
+
+	var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+	$(".work-entry:last").append(formattedDescription);
+
+
+	var formattedWorkLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
+	$(".work-entry:last").append(formattedWorkLocation);
+	}
 }
 
+displayWork(); //This is how to envoke a function! 
 
+// This will be the header contact details
 
+for (contact in bio.contacts) {
+	$("#topContacts").append(HTMLcontactGeneric);
+
+	var formattedMobile = HTMLmobile.replace("%data%", bio.contacts[contact].mobile);
+	var formattedEmail = HTMLemail.replace("%data%", bio.contacts[contact].email);
+	var formattedGithub = HTMLgithub.replace("%data%", bio.contacts[contact].github);
+	var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts[contact].twitter);
+	var formattedLocation = HTMLlocation.replace("%data%", bio.contacts[contact].location);
+}
 
 
 
