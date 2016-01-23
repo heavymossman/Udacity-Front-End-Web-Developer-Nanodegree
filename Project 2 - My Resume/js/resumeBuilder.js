@@ -28,7 +28,6 @@ var bio = {
 	'biopic' : 'https://pbs.twimg.com/profile_images/491578108063936512/0ixtr84I_400x400.jpeg'
 };
 
-console.log(bio);
 
 var education = {
 	'schools' : [
@@ -59,7 +58,6 @@ var education = {
 	]
 }
 
-console.log(education);
 
 var work = {
 	'jobs' : [
@@ -73,35 +71,34 @@ var work = {
 	{
 		'employer' : 'Globes Services INC',
 		'title' : 'CEO',
-		'location' : 'Old Street, London, UK',
+		'location' : 'NJ, USA',
 		'dates' : '2012 - Present',
 		'description' : 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.'
 	}
 	]
 };
 
-console.log(work);
 
 var projects = {
 	'projects' : [
 	{
 		'title' : 'Diligence',
 		'dates' : '2015 - 2016',
-		'description' : 'description will go here',
+		'description' : 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
 		'images': [
-	       'http://placekitten.com/g/300/300',
-	       'http://placekitten.com/g/250/300',
-	       'http://placekitten.com/g/350/300'
+	       'https://placehold.it/350x350',
+	       'https://placehold.it/350x350',
+	       'https://placehold.it/350x350'
      ]
 	},
 	{
 		'title' : 'Disrupt and Refine',
 		'dates' : 'Managing Director',
-		'description' : 'I was the daddy - so what??',
+		'description' : 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
 		'images': [
-	       'http://placekitten.com/g/300/300',
-	       'http://placekitten.com/g/250/300',
-	       'http://placekitten.com/g/350/300'
+	       'https://placehold.it/350x350',
+	       'https://placehold.it/350x350',
+	       'https://placehold.it/350x350'
      ]
 	}
 	]
@@ -109,12 +106,27 @@ var projects = {
 
 console.log(projects);
 
+
 // Going to try to append bio sections manually 
 
 var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
 $("#header").prepend(formattedRole);
 var formattedName = HTMLheaderName.replace("%data%", bio.name); 
 $("#header").prepend(formattedName);
+
+
+
+// Contact section: 
+
+for (contact in bio.contacts) {
+
+	var formattedContact = HTMLcontactGeneric.replace("%data%", bio.contacts[contact]);
+	console.log(formattedContact)
+	formattedContact = formattedContact.replace("%contact%", contact);
+	$("#topContacts").append(formattedContact);
+ }
+
+
 
 // This section will append the bio pic and the welcome message
 
@@ -175,19 +187,90 @@ for (job in work.jobs) {
 
 displayWork(); //This is how to envoke a function! 
 
-// This will be the header contact details
+// This section will create the Internalisde Name button on the bottom left of the index page. Clicking it iwll capatilise the Header Name Surname. 
 
-for (contact in bio.contacts) {
-	$("#topContacts").append(HTMLcontactGeneric);
+function inName() {
 
-	var formattedMobile = HTMLmobile.replace("%data%", bio.contacts[contact].mobile);
-	var formattedEmail = HTMLemail.replace("%data%", bio.contacts[contact].email);
-	var formattedGithub = HTMLgithub.replace("%data%", bio.contacts[contact].github);
-	var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts[contact].twitter);
-	var formattedLocation = HTMLlocation.replace("%data%", bio.contacts[contact].location);
+
+
+	var finalName = bio.name;
+	var names = bio.name.split(" "); //This seperates the string into indivdual strings ("String", "String", "etc")
+	names[1] = names[1].toUpperCase();
+    names[0] = names[0].slice(0,1).toUpperCase() + names[0].slice(1).toLowerCase();
+    finalName = names.join(" ");
+   
+    return finalName;
+    $("#header").prepend(finalName);
 }
 
+$("#main").append(internationalizeButton);
+
+inName();
+
+// This section will handle the projects
+
+projects.display = function() {
 
 
 
+	for (project in projects.projects) {
+		$("#projects").append(HTMLprojectStart);
 
+		var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
+		$(".project-entry:last").append(formattedTitle);
+		console.log(formattedTitle);
+
+		var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
+		$(".project-entry:last").append(formattedDates);
+
+		var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
+		$(".project-entry:last").append(formattedDescription);
+
+
+		for (image in projects.projects[project].images) {
+        var formattedProjectImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
+        $(".project-entry:last").append(formattedProjectImage);
+		}
+
+	}
+}
+
+projects.display();
+
+// This will displaty the map function. 
+
+$("#mapDiv").append(googleMap);
+
+// This will handle the Education section
+
+education.display = function() {
+
+
+
+	for (educations in education.schools) {
+		$("#education").append(HTMLschoolStart);
+
+		var formattedSchool = HTMLschoolName.replace("%data%", education.schools[educations].name);
+		$(".education-entry:last").append(formattedSchool);
+
+		var formattedDates = HTMLschoolDates.replace("%data%", education.schools[educations].dates);
+		$(".education-entry:last").append(formattedDates);
+
+		var formattedLocation = HTMLschoolLocation.replace("%data%", education.schools[educations].location);
+		$(".education-entry:last").append(formattedLocation);
+
+		var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[educations].majors);
+		$(".education-entry:last").append(formattedMajor);
+
+	}
+}
+
+education.display();
+
+for (contact in bio.contacts) {
+
+	var formattedContact = HTMLcontactGeneric.replace("%data%", bio.contacts[contact]);
+	console.log(formattedContact)
+	formattedContact = formattedContact.replace("%contact%", contact);
+	$("#footerContacts").append(formattedContact);
+ }
