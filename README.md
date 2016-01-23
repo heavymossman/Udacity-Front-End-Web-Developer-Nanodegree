@@ -7,7 +7,7 @@ This repository contains project work for <a href="https://www.udacity.com/cours
 <h2>Projects:</h2>
 <ul>
   <li><a href="https://github.com/heavymossman/Udacity-Front-End-Web-Developer-Nanodegree/tree/master/Project%201%20-%20Portfolio%20Website "target="_blank">Project 1 - Mockup to Website</a> - <a href="http://michaelosullivan.london/" target="_blank">Live Site</a></li>
-  <li><a href="https://github.com/heavymossman/Udacity-Front-End-Web-Developer-Nanodegree/tree/master/Project%202%20-%20My%20Resume" target="_blank">Project 2 - Interactive Resume</a><a href="http://michaelosullivan.london/resume/" target="_blank">Live Site</a></li>
+  <li><a href="https://github.com/heavymossman/Udacity-Front-End-Web-Developer-Nanodegree/tree/master/Project%202%20-%20My%20Resume" target="_blank">Project 2 - Interactive Resume - </a><a href="http://michaelosullivan.london/resume/" target="_blank">Live Site</a></li>
   <li>Project 3 - Classic Arcade Game Clone</li>
   <li>Project 4 - Website Optimization</li>
   <li>Project 5 - Neighborhood Map Project</li>
