@@ -23,7 +23,7 @@ var bio = {
 	},
 	'welcomeMessage' : 'Welcome to my Digital Resume - Created as Part of my Udacity Nanodegree',
 	'skills' : ['JaveScript', 'HTML 5', 'CSS', 'Python'],
-	'biopic' : 'https://pbs.twimg.com/profile_images/491578108063936512/0ixtr84I_400x400.jpeg'
+	'biopic' : 'images/me.jpeg'
 };
 
 
@@ -80,7 +80,7 @@ var work = {
 var projects = {
 	'projects' : [
 	{
-		'title' : 'Diligence',
+		'title' : 'O2 - Assest Manager System',
 		'dates' : '2015 - 2016',
 		'description' : 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
 		'images': [
@@ -90,7 +90,7 @@ var projects = {
      ]
 	},
 	{
-		'title' : 'Disrupt and Refine',
+		'title' : 'Bid Buy Out - Unique Auction Website',
 		'dates' : 'Managing Director',
 		'description' : 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
 		'images': [
