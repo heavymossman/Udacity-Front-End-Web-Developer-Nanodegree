@@ -22,7 +22,7 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
   <title>Resume - Michael O'Sullivan</title>
 
   <!-- Load the page styles. -->
-  <link href="css/style.css" rel="stylesheet">
+
 
   <!-- Latest compiled and minified CSS -->
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous" />
@@ -32,6 +32,8 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
       <!-- Latest compiled and minified JavaScript -->
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous" /></script>
+
+      <link href="css/style.css" rel="stylesheet">
 
   <!--
   jQuery is a common JavaScript library for reading and making changes to the
@@ -59,7 +61,49 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
 
   <meta name="viewport" content="width=device-width">
 </head>
+
+
 <body>
+
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Digital Resume</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="#">Home <span class="sr-only">(current)</span></a></li>
+        <li><a href="#work">Work Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#map">Work Map</a></li>
+       
+        </li>
+      </ul>
+      
+      <ul class="nav navbar-nav navbar-right">
+      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Join Mail List</a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Admin Login</a></li>
+    </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+
+
   <div id="main">
     <!-- You'll be deleting this line in the course -->
 
@@ -74,16 +118,16 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
     </div>
     <div style="clear: both;"></div>
     <div id="workExperience" class="gray">
-      <h2>Work Experience</h2>
+      <a name="work"><h2>Work Experience</h2></a>
     </div>
     <div id="projects">
-      <h2>Projects</h2>
+      <a name="projects"><h2>Projects</h2></a>?
     </div>
     <div id="education" class="gray">
-      <h2>Education</h2>
+      <a name="education"><h2>Education</h2></a>
     </div>
     <div id="mapDiv">
-      <h2>Where I've Lived and Worked</h2>
+      <a name="map"><h2>Where I've Lived and Worked</h2></a>
     </div>
     <div id="lets-connect" class="dark-gray">
       <h2 class="orange center-text">Let's Connect</h2>

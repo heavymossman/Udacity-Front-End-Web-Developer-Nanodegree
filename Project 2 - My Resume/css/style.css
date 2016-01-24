@@ -14,6 +14,8 @@ h6 {
   font-family: "Roboto", sans-serif;
 }
 
+body { padding-top: 70px; }
+
 .clear-fix {
   overflow: auto;
 }
@@ -130,7 +132,12 @@ a {
 
 /* TODO: Replace with image later */
 #header {
-  background-color: #484848;
+  background: #820000; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(#820000, #FF6A6A); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#820000, #FF6A6A); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#820000, #FF6A6A); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#820000, #FF6A6A); /* Standard syntax */
+  background-color: #820000;
   color: #fff;
 }
 
@@ -156,6 +163,9 @@ ul {
   padding: 10px;
   width: 200px;
   display: none;
+  border-radius: 100px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
 }
 
 img {
@@ -213,4 +223,8 @@ span {
   .biopic {
     display: block;
   }
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    color: #f5ae23;
 }

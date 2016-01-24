@@ -11,8 +11,6 @@ var formattedRole = HTMLheaderRole.replace("%data%", role);
  $("#header").prepend(formattedRole); /* we use prepend to ensure content is delivered at the beginning of the DIV - append delivery it at the end I think */
  // $("#header").prepend(formattedName);
 
-
-
 var bio = {
 	'name' : 'Michael OSullivan',
 	'role' : 'Front End Web Developer Ninja',
@@ -104,8 +102,7 @@ var projects = {
 	]
 };
 
-console.log(projects);
-
+function displayBio() {
 
 // Going to try to append bio sections manually 
 
@@ -113,8 +110,6 @@ var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
 $("#header").prepend(formattedRole);
 var formattedName = HTMLheaderName.replace("%data%", bio.name); 
 $("#header").prepend(formattedName);
-
-
 
 // Contact section: 
 
@@ -125,8 +120,6 @@ for (contact in bio.contacts) {
 	formattedContact = formattedContact.replace("%contact%", contact);
 	$("#topContacts").append(formattedContact);
  }
-
-
 
 // This section will append the bio pic and the welcome message
 
@@ -153,6 +146,10 @@ if(bio.skills.length > 0) {
 	formattedSkill = HTMLskills.replace("%data%", bio.skills[3]); 
 	$("#skills").append(formattedSkill);
 }
+
+} 
+
+displayBio(); //This is how to envoke a function! 
 
 function displayWork() {
 
@@ -262,10 +259,28 @@ education.display = function() {
 		var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[educations].majors);
 		$(".education-entry:last").append(formattedMajor);
 
+		}
+
+	for (onlineCourse in education.onlineCoures) {
+		$("#education").append(HTMLonlineClasses);
+		$("#education").append(HTMLschoolStart);
+
+		var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCoures[onlineCourse].title);
+		$(".education-entry:last").append(formattedOnlineTitle);
+		var formattedOnlineDate = HTMLonlineDates.replace("%data%", education.onlineCoures[onlineCourse].date);
+		$(".education-entry:last").append(formattedOnlineDate);
+		var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCoures[onlineCourse].school);
+		$(".education-entry:last").append(formattedOnlineSchool);
+		var formattedOnlineUrl = HTMLonlineURL.replace("%data%", education.onlineCoures[onlineCourse].url);
+		$(".education-entry:last").append(formattedOnlineUrl);
+	
 	}
 }
 
 education.display();
+
+
+function edu() { 
 
 for (contact in bio.contacts) {
 
@@ -274,3 +289,7 @@ for (contact in bio.contacts) {
 	formattedContact = formattedContact.replace("%contact%", contact);
 	$("#footerContacts").append(formattedContact);
  }
+
+}
+
+edu();
