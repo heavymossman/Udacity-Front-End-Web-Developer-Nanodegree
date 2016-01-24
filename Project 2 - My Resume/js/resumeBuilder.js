@@ -21,7 +21,7 @@ var bio = {
 		'twitter' : 'heavymossman',
 		'location' : 'London'
 	},
-	'welcomeMessage' : 'Hello Sexy Moss',
+	'welcomeMessage' : 'Welcome to my Digital Resume - Created as Part of my Udacity Nanodegree',
 	'skills' : ['JaveScript', 'HTML 5', 'CSS', 'Python'],
 	'biopic' : 'https://pbs.twimg.com/profile_images/491578108063936512/0ixtr84I_400x400.jpeg'
 };
