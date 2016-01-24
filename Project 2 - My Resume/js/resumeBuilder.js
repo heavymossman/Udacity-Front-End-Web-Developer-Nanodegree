@@ -1,15 +1,4 @@
 
-/*
-var name = "Michael O'Sullivan";
-var formattedName = HTMLheaderName.replace("%data%", name);
-
-var role = "Front End Web Developer";
-
-var formattedRole = HTMLheaderRole.replace("%data%", role);
-
-
- $("#header").prepend(formattedRole); /* we use prepend to ensure content is delivered at the beginning of the DIV - append delivery it at the end I think */
- // $("#header").prepend(formattedName);
 
 var bio = {
 	'name' : 'Michael OSullivan',
@@ -102,56 +91,66 @@ var projects = {
 	]
 };
 
-function displayBio() {
+bio.display = function(){
 
-// Going to try to append bio sections manually 
+	// Going to try to append bio sections manually 
 
-var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-$("#header").prepend(formattedRole);
-var formattedName = HTMLheaderName.replace("%data%", bio.name); 
-$("#header").prepend(formattedName);
+	var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+	$("#header").prepend(formattedRole);
+	var formattedName = HTMLheaderName.replace("%data%", bio.name); 
+	$("#header").prepend(formattedName);
 
-// Contact section: 
+	// Contact section: 
 
-for (contact in bio.contacts) {
+	for (contact in bio.contacts) {
+
+		var formattedContact = HTMLcontactGeneric.replace("%data%", bio.contacts[contact]);
+		console.log(formattedContact)
+		formattedContact = formattedContact.replace("%contact%", contact);
+		$("#topContacts").append(formattedContact);
+	 }
+
+	// This section will append the bio pic and the welcome message
+
+
+	var formattedWelcomemsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
+	$("#header").append(formattedWelcomemsg);
+
+	var formattedBiopic = HTMLbioPic.replace("%data%", bio.biopic);
+	$("#header").append(formattedBiopic);
+
+
+	/* This will create the Skills at a glance section */ 
+
+	if(bio.skills.length > 0) {
+
+		$("#header").append(HTMLskillsStart);
+
+		var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
+		$("#skills").append(formattedSkill);
+		formattedSkill = HTMLskills.replace("%data%", bio.skills[1]); 
+		$("#skills").append(formattedSkill);
+		formattedSkill = HTMLskills.replace("%data%", bio.skills[2]); 
+		$("#skills").append(formattedSkill);
+		formattedSkill = HTMLskills.replace("%data%", bio.skills[3]); 
+		$("#skills").append(formattedSkill);
+	}
+
+	// This section will handle the footer contacts
+
+	for (contact in bio.contacts) {
 
 	var formattedContact = HTMLcontactGeneric.replace("%data%", bio.contacts[contact]);
 	console.log(formattedContact)
 	formattedContact = formattedContact.replace("%contact%", contact);
-	$("#topContacts").append(formattedContact);
+	$("#footerContacts").append(formattedContact);
  }
 
-// This section will append the bio pic and the welcome message
+};
 
 
-var formattedWelcomemsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
-$("#header").append(formattedWelcomemsg);
 
-var formattedBiopic = HTMLbioPic.replace("%data%", bio.biopic);
-$("#header").append(formattedBiopic);
-
-
-/* This will create the Skills at a glance section */ 
-
-if(bio.skills.length > 0) {
-
-	$("#header").append(HTMLskillsStart);
-
-	var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
-	$("#skills").append(formattedSkill);
-	formattedSkill = HTMLskills.replace("%data%", bio.skills[1]); 
-	$("#skills").append(formattedSkill);
-	formattedSkill = HTMLskills.replace("%data%", bio.skills[2]); 
-	$("#skills").append(formattedSkill);
-	formattedSkill = HTMLskills.replace("%data%", bio.skills[3]); 
-	$("#skills").append(formattedSkill);
-}
-
-} 
-
-displayBio(); //This is how to envoke a function! 
-
-function displayWork() {
+work.display = function() {
 
 // This is the Work Experience section
 
@@ -180,16 +179,11 @@ for (job in work.jobs) {
 	var formattedWorkLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
 	$(".work-entry:last").append(formattedWorkLocation);
 	}
-}
-
-displayWork(); //This is how to envoke a function! 
+};
 
 // This section will create the Internalisde Name button on the bottom left of the index page. Clicking it iwll capatilise the Header Name Surname. 
 
 function inName() {
-
-
-
 	var finalName = bio.name;
 	var names = bio.name.split(" "); //This seperates the string into indivdual strings ("String", "String", "etc")
 	names[1] = names[1].toUpperCase();
@@ -200,15 +194,11 @@ function inName() {
     $("#header").prepend(finalName);
 }
 
-$("#main").append(internationalizeButton);
-
 inName();
 
 // This section will handle the projects
 
 projects.display = function() {
-
-
 
 	for (project in projects.projects) {
 		$("#projects").append(HTMLprojectStart);
@@ -230,9 +220,8 @@ projects.display = function() {
 		}
 
 	}
-}
+};
 
-projects.display();
 
 // This will displaty the map function. 
 
@@ -241,8 +230,6 @@ $("#mapDiv").append(googleMap);
 // This will handle the Education section
 
 education.display = function() {
-
-
 
 	for (educations in education.schools) {
 		$("#education").append(HTMLschoolStart);
@@ -275,21 +262,13 @@ education.display = function() {
 		$(".education-entry:last").append(formattedOnlineUrl);
 	
 	}
-}
+};
 
+
+// Display or envoke code sction: 
+
+
+bio.display();
+work.display();
+projects.display();
 education.display();
-
-
-function edu() { 
-
-for (contact in bio.contacts) {
-
-	var formattedContact = HTMLcontactGeneric.replace("%data%", bio.contacts[contact]);
-	console.log(formattedContact)
-	formattedContact = formattedContact.replace("%contact%", contact);
-	$("#footerContacts").append(formattedContact);
- }
-
-}
-
-edu();
